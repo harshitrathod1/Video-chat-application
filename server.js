@@ -12,7 +12,7 @@ const peerServer = ExpressPeerServer(server, {
     debug : true,
 }); 
 
-  
+const PORT = process.env.PORT || 3000;
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
@@ -42,7 +42,7 @@ io.on('connection',(socket) => {
 });
 
 
-server.listen(3030,function(){
+server.listen(PORT,function(){
     console.log("App started running at port 3030");
 });
 
